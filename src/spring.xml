@@ -9,8 +9,9 @@
             <constructor-arg value="white" />
         </bean>
 
-        <bean id="triangleWithPoint" class="org.agm.TriangleWithPoint" autowire="byName">
-        </bean>
+        <bean id="triangleWithPoint" class="org.agm.TriangleWithPoint" autowire="byName"/>
+        <!-- When autowiring byType: <bean id="triangleWithPoint" class="org.agm.TriangleWithPoint" autowire="byType"/> -->
+        <!-- Autowiring byType works only for unique instance variables -->
 
         <bean id="pointA" class="org.agm.Point">
             <property name="x" value="0"/>
