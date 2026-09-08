@@ -9,10 +9,20 @@
             <constructor-arg value="white" />
         </bean>
 
-        <bean id="triangleWithPoint" class="org.agm.TriangleWithPoint" autowire="byName">
+        <bean id="parent" class="org.agm.TriangleWithPoint">
+            <property name="pointA" ref="pointA" />
         </bean>
 
-        <bean id="pointA" class="org.agm.Point">
+        <bean id="triangleWithPoint" class="org.agm.TriangleWithPoint" parent="parent">
+            <property name="pointB" ref="pointB" />
+            <property name="pointC" ref="pointC" />
+        </bean>
+
+        <!-- In the case the member variables were to be collections like list, we may want to merge child beans with parent
+        we can use abstract=true in parent and that makes whatever is in the parent as default and the child beans can just add to it.
+        -->
+
+    <bean id="pointA" class="org.agm.Point">
             <property name="x" value="0"/>
             <property name="y" value="0"/>
         </bean>
