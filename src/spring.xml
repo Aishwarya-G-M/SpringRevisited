@@ -9,24 +9,19 @@
             <constructor-arg value="white" />
         </bean>
 
-        <bean id="triangleWithPoint" class="org.agm.TriangleWithPoint">
-            <property name="PointA" ref="zeroPoint"/>
-            <property name="PointB">
-                <bean class="org.agm.Point">
-                    <property name="x" value="-20"/>
-                    <property name="y" value="0"/>
-                </bean>
-            </property>
-            <property name="PointC">
-                <bean class="org.agm.Point">
-                    <property name="x" value="+20"/>
-                    <property name="y" value="0"/>
-                </bean>
-            </property>
+        <bean id="triangleWithPoint" class="org.agm.TriangleWithPoint" autowire="byName">
         </bean>
 
-        <bean id="zeroPoint" class="org.agm.Point">
+        <bean id="pointA" class="org.agm.Point">
             <property name="x" value="0"/>
+            <property name="y" value="0"/>
+        </bean>
+        <bean id="pointB" class="org.agm.Point">
+            <property name="x" value="-20"/>
+            <property name="y" value="0"/>
+        </bean>
+        <bean id="pointC" class="org.agm.Point">
+            <property name="x" value="+20"/>
             <property name="y" value="0"/>
         </bean>
     </beans>
