@@ -8,4 +8,23 @@
             <!-- Below is constructor injection -->
             <constructor-arg value="white" />
         </bean>
+
+        <bean id="triangleWithPoint" class="org.agm.TriangleWithPoint">
+            <property name="PointA" ref="Point1"/>
+            <property name="PointB" ref="Point2"/>
+            <property name="PointC" ref="Point3"/>
+        </bean>
+
+        <bean id="Point1" class="org.agm.Point">
+            <property name="x" value="0"/>
+            <property name="y" value="0"/>
+        </bean>
+        <bean id="Point2" class="org.agm.Point">
+            <property name="x" value="-20"/>
+            <property name="y" value="0"/>
+        </bean>
+        <bean id="Point3" class="org.agm.Point">
+            <property name="x" value="20"/>
+            <property name="y" value="0"/>
+        </bean>
     </beans>
