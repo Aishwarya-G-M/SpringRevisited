@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
 
-<beans>
-    <bean id="triangle" class="org.agm.Triangle">
-        <property name="type" value="Equilateral"/>
-    </bean>
-</beans>
+    <beans>
+        <bean id="triangle" class="org.agm.Triangle">
+            <!-- Below is setter injection -->
+            <property name="type" value="Equilateral"/>
+            <!-- Below is constructor injection -->
+            <constructor-arg value="white" />
+        </bean>
+    </beans>

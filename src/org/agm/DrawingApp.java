@@ -5,12 +5,12 @@ import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.core.io.ClassPathResource;
-import org.springframework.core.io.FileSystemResource;
 
 public class DrawingApp {
     public static void main(String[] args) {
         // The next 2 lines is not using Spring
         Triangle triangle = new Triangle();
+        System.out.println("Triangle without using spring:");
         triangle.draw();
 
         // Now using Spring will look like:
@@ -22,5 +22,9 @@ public class DrawingApp {
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring.xml");
         Triangle triangle3 = (Triangle) applicationContext.getBean("triangle");
         triangle3.draw();
+
+        ApplicationContext applicationContext2 = new ClassPathXmlApplicationContext("spring.xml");
+        Triangle triangle4 = (Triangle) applicationContext2.getBean("triangle");
+        triangle4.draw();
     }
 }
