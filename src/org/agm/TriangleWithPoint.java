@@ -36,4 +36,12 @@ public class TriangleWithPoint {
         System.out.println("PointB ( "+pointB.getX()+","+pointB.getY()+" )");
         System.out.println("PointC ( "+pointC.getX()+","+pointC.getY()+" )");
     }
+
+    public void defaultInit(){
+        System.out.println("From default initialisation of TriangleWithPoint bean.");
+    }
+
+    public void defaultCleanUp(){
+        System.out.println("From default cleaup method of TriangleWithPoint bean.");
+    }
 }
